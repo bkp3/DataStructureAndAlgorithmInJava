@@ -99,7 +99,7 @@ public class Array {
 //		System.out.println("Minimum value is :- "+obj.minValue());
 //
 //		//Maximum value of array
-//		System.out.println("Maximum value is :- "+obj.maxValue());
+		System.out.println("Maximum value is :- "+obj.maxValue());
 		
 		//Reverse an array
 //		System.out.println("Reverse Array :- ");
