@@ -48,6 +48,45 @@ public class LevelOrderTraversal {
 		}
 	}
 
+	// level order traversal using map
+	public void levelOrderThree(TreeNode root) {
+		if (root == null)
+			return;
+
+		HashMap<Integer, ArrayList<Integer>> mp = new HashMap<>();
+		Queue<TreeNode> q = new LinkedList<>();
+		int hd = 0;
+		q.offer(root);
+
+		while (!q.isEmpty()) {
+			int size = q.size();
+
+			if (!mp.containsKey(hd)) {
+				mp.put(hd, new ArrayList<>());
+			}
+
+			while (size-- > 0) {
+				TreeNode temp = q.poll();
+				mp.get(hd).add(temp.data);
+				if (temp.left != null) {
+					q.offer(temp.left);
+				}
+				if (temp.right != null) {
+					q.offer(temp.right);
+				}
+			}
+			hd++;
+		}
+
+		for (Map.Entry<Integer, ArrayList<Integer>> x : mp.entrySet()) {
+			System.out.print(x.getKey() + " :- ");
+			for (int i = 0; i < x.getValue().size(); i++) {
+				System.out.print(x.getValue().get(i) + " ");
+			}
+			System.out.println();
+		}
+	}
+
 	// Level order traversal using map
 	public void levelOrderTwo(TreeNode root) {
 		if (root == null) {
@@ -116,7 +155,7 @@ public class LevelOrderTraversal {
 		LevelOrderTraversal obj = new LevelOrderTraversal();
 		obj.createBinaryTree();
 
-		obj.levelOrderTwo(obj.root);
+		obj.levelOrderThree(obj.root);
 	}
 
 }

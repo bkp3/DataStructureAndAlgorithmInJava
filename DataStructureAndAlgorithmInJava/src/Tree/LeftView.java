@@ -79,21 +79,23 @@ public class LeftView {
 	}
 
 	public void lefViewEfficient(TreeNode root) {
-		ArrayList<Integer> ans = new ArrayList<>();
 
+		HashMap<Integer, ArrayList<Integer>> mp = new HashMap<>();
 		Queue<TreeNode> q = new LinkedList<>();
 		q.offer(root);
 
-		int f = 0;
+		int hd = 0;
 
 		while (!q.isEmpty()) {
-			int count = q.size();
-			while (count-- > 0) {
+			int size = q.size();
+
+			if (!mp.containsKey(hd)) {
+				mp.put(hd, new ArrayList<>());
+			}
+
+			while (size-- > 0) {
 				TreeNode temp = q.poll();
-				if (f == 0) {
-					ans.add(temp.data);
-				}
-				f++;
+				mp.get(hd).add(temp.data);
 				if (temp.left != null) {
 					q.offer(temp.left);
 				}
@@ -101,11 +103,11 @@ public class LeftView {
 					q.offer(temp.right);
 				}
 			}
-			f = 0;
+			hd++;
 		}
 
-		for (int x : ans) {
-			System.out.print(x + " ");
+		for (Map.Entry<Integer, ArrayList<Integer>> x : mp.entrySet()) {
+			System.out.print(x.getValue().get(0) + " ");
 		}
 
 	}

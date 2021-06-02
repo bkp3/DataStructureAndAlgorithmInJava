@@ -1,7 +1,7 @@
-package Stack;
+package StackPackage;
 import java.util.*;
 
-public class Stack {
+public class StackDemo {
 	
 	private ListNode top;
 	private int length;
@@ -15,7 +15,7 @@ public class Stack {
 		}
 	}
 	
-	public Stack(){
+	public StackDemo(){
 		top = null;
 		length = 0;
 	}
@@ -56,7 +56,7 @@ public class Stack {
 	}
 	
 	public int[] revArray(int arr[]) {
-		Stack st = new Stack();
+		StackDemo st = new StackDemo();
 		for(int x: arr) {
 			st.push(x);
 		}
@@ -67,7 +67,7 @@ public class Stack {
 	}
 	
 	public static void main(String[] args) {
-		Stack obj = new Stack();
+		StackDemo obj = new StackDemo();
 		Scanner sc = new Scanner(System.in);
 //		obj.push(10);
 //		obj.push(20);
