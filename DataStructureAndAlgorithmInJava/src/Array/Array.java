@@ -28,6 +28,11 @@ public class Array {
 		return min;
 	}
 	
+	public int lengthArray() {
+		int x=arr.length;
+		return x;
+	}
+	
 	public int maxValue() {
 	    int max=arr[0];
 	    for(int i=0;i<n;i++){
