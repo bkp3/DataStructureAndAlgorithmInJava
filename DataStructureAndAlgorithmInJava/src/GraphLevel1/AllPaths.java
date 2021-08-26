@@ -19,6 +19,12 @@ import java.util.*;
 0
 6
 
+o/p ->
+0123456
+012346
+03456
+0346
+
 */
 public class AllPaths {
 
@@ -81,7 +87,7 @@ public class AllPaths {
 		}
 
 		boolean[] visited = new boolean[n];
-		printAllPaths(graph, src, dst, visited, src + " ");
+		printAllPaths(graph, src, dst, visited, src + "");
 
 	}
 
