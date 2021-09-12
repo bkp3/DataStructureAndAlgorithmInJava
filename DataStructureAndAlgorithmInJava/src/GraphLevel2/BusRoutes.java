@@ -26,7 +26,7 @@ public class BusRoutes {
 		HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
 
 		for (int i = 0; i < mat.length; i++) {
-			for (int j = 0; j < mat[0].length; j++) {
+			for (int j = 0; j < mat[i].length; j++) {
 				if (map.containsKey(mat[i][j])) {
 					ArrayList<Integer> arr1 = map.get(mat[i][j]);
 					arr1.add(i);
