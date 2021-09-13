@@ -3,6 +3,7 @@ package GraphLevel1;
 import java.util.*;
 import java.io.*;
 
+// using BFS
 /*
 
 i/p->
@@ -15,7 +16,7 @@ i/p->
 4 6 10
 
 o/p->
-
+true
 
 */
 public class IsAGraphCyclic {
@@ -43,14 +44,14 @@ public class IsAGraphCyclic {
 	}
 
 	public static boolean isCyclic(ArrayList<Edge>[] graph, int src, boolean[] visited) {
-		ArrayDeque<Pair> queue = new ArrayDeque<>();
+		Queue<Pair> queue = new LinkedList<>();
 		queue.add(new Pair(src, src + ""));
 
 		while (queue.size() > 0) {
 			// rm*wa*
 			// remove mark * work add *
 
-			Pair rem = queue.removeFirst();
+			Pair rem = queue.remove();
 			if (visited[rem.v] == true) {
 				return true;
 			}
