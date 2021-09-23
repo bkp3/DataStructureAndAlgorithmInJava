@@ -47,9 +47,9 @@ public class BellmanFord {
 		}
 
 		int src = 0;
-		int[] path = new int[n];
-		Arrays.fill(path, Integer.MAX_VALUE);
-		path[src] = 0;
+		int[] dist = new int[n];
+		Arrays.fill(dist, Integer.MAX_VALUE);
+		dist[src] = 0;
 
 		for (int i = 0; i < n - 1; i++) {
 			for (int j = 0; j < e; j++) {
@@ -58,14 +58,14 @@ public class BellmanFord {
 				int v = arr[j][1];
 				int wt = arr[j][2];
 
-				if (path[v] > path[u] + wt && path[u] != Integer.MAX_VALUE) {
-					path[v] = path[u] + wt;
+				if (dist[v] > dist[u] + wt && dist[u] != Integer.MAX_VALUE) {
+					dist[v] = dist[u] + wt;
 				}
 			}
 		}
 
 		for (int i = 0; i < n; i++) {
-			System.out.println(0 + " -> " + i + " = " + path[i]);
+			System.out.println(0 + " -> " + i + " = " + dist[i]);
 		}
 
 	}
