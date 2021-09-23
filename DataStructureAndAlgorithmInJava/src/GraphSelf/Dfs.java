@@ -19,32 +19,22 @@ i/p->
 o/p->
 2
 1
-3
 0
+3
 4
 5
 6
 
+
 */
 
-public class Bfs {
-	static void bfs(ArrayList<Integer>[] adj, int src, boolean[] visited) {
-		Queue<Integer> q = new LinkedList<>();
-		q.add(src);
-		while (q.size() > 0) {
-			int rem = q.remove();
-
-			if (visited[rem] == true) {
-				continue;
-			}
-			visited[rem] = true;
-
-			System.out.println(rem);
-
-			for (int x : adj[rem]) {
-				if (visited[x] == false) {
-					q.add(x);
-				}
+public class Dfs {
+	static void dfs(ArrayList<Integer>[] adj, int src, boolean[] visited) {
+		visited[src] = true;
+		System.out.println(src);
+		for (int x : adj[src]) {
+			if (visited[x] == false) {
+				dfs(adj, x, visited);
 			}
 		}
 	}
@@ -68,7 +58,7 @@ public class Bfs {
 
 		int src = Integer.parseInt(br.readLine());
 		boolean[] visited = new boolean[n];
-		bfs(adj, src, visited);
+		dfs(adj, src, visited);
 
 	}
 

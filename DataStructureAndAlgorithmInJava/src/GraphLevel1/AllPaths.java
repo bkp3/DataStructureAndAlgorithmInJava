@@ -52,7 +52,7 @@ public class AllPaths {
 			}
 
 		}
-		visited[src]=false;
+		visited[src] = false;
 
 	}
 
@@ -77,14 +77,6 @@ public class AllPaths {
 
 		int src = Integer.parseInt(br.readLine());
 		int dst = Integer.parseInt(br.readLine());
-
-		for (int i = 0; i < n; i++) {
-			System.out.print(i + " --> ");
-			for (Edge edge : graph[i]) {
-				System.out.print(edge.src + " " + edge.nbr + " " + edge.wt + " , ");
-			}
-			System.out.println();
-		}
 
 		boolean[] visited = new boolean[n];
 		printAllPaths(graph, src, dst, visited, src + "");

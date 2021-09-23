@@ -84,13 +84,13 @@ public class IsAGraphBipartite {
 	}
 
 	static boolean checkComponentForBipartiteness(ArrayList<Edge>[] graph, int src, int[] visited) {
-		ArrayDeque<Pair> q = new ArrayDeque<>();
+		Queue<Pair> q = new LinkedList<>();
 
 		q.add(new Pair(src, src + "", 0));
 
 		while (q.size() > 0) {
 			// rm*wa*
-			Pair rem = q.removeFirst();
+			Pair rem = q.remove();
 
 			if (visited[rem.v] != -1) {
 				// some work to do
