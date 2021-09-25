@@ -27,6 +27,24 @@ o/p->
 5 - 012345 @ 35
 6 - 0123456 @ 38
 
+2nd example:-
+i/p->
+5
+6
+0 1 9
+0 2 6
+0 3 5
+0 4 3
+2 1 2
+2 3 4
+0
+
+o/p->
+0 - 0 @ 0
+4 - 04 @ 3
+3 - 03 @ 5
+2 - 02 @ 6
+1 - 021 @ 8
 
 */
 public class Dijkstra {
@@ -73,6 +91,7 @@ public class Dijkstra {
 			visited[rem.v] = true;
 
 			System.out.println(rem.v + " - " + rem.psf + " @ " + rem.wsf);
+			// dist[rem.v]=rem.wsf;
 
 			for (Edge e : adj[rem.v]) {
 				if (visited[e.nbr] == false) {
