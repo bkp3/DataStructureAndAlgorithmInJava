@@ -46,20 +46,20 @@ public class BellmanFord {
 			arr[i][2] = Integer.parseInt(parts[2]);
 		}
 
-		int src = 0;
+		int source = 0;
 		int[] dist = new int[n];
 		Arrays.fill(dist, Integer.MAX_VALUE);
-		dist[src] = 0;
+		dist[source] = 0;
 
 		for (int i = 0; i < n - 1; i++) {
 			for (int j = 0; j < e; j++) {
 
-				int u = arr[j][0];
-				int v = arr[j][1];
+				int src = arr[j][0];
+				int nbr = arr[j][1];
 				int wt = arr[j][2];
 
-				if (dist[v] > dist[u] + wt && dist[u] != Integer.MAX_VALUE) {
-					dist[v] = dist[u] + wt;
+				if (dist[nbr] > dist[src] + wt && dist[src] != Integer.MAX_VALUE) {
+					dist[nbr] = dist[src] + wt;
 				}
 			}
 		}

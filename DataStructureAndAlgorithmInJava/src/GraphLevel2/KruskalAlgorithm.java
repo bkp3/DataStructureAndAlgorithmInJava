@@ -68,7 +68,19 @@ public class KruskalAlgorithm {
 		}
 	}
 
-	static int mst(int n, int[][] edges) {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		int m = Integer.parseInt(br.readLine());
+
+		int[][] edges = new int[m][3];
+		for (int i = 0; i < m; i++) {
+			String[] parts = br.readLine().split(" ");
+			edges[i][0] = Integer.parseInt(parts[0]);
+			edges[i][1] = Integer.parseInt(parts[1]);
+			edges[i][2] = Integer.parseInt(parts[2]);
+		}
+
 		Pair[] arr = new Pair[edges.length];
 		for (int i = 0; i < edges.length; i++) {
 			arr[i] = new Pair(edges[i][0], edges[i][1], edges[i][2]);
@@ -89,24 +101,7 @@ public class KruskalAlgorithm {
 				ans = ans + arr[i].wt;
 			}
 		}
-		return ans;
 
-	}
-
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int m = Integer.parseInt(br.readLine());
-
-		int[][] edges = new int[m][3];
-		for (int i = 0; i < m; i++) {
-			String[] parts = br.readLine().split(" ");
-			edges[i][0] = Integer.parseInt(parts[0]);
-			edges[i][1] = Integer.parseInt(parts[1]);
-			edges[i][2] = Integer.parseInt(parts[2]);
-		}
-
-		int ans = mst(n, edges);
 		System.out.println(ans);
 
 	}
