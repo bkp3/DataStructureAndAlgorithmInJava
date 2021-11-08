@@ -1,0 +1,9 @@
+char a = 'a';
+System.out.println((int)a);		//97
+System.out.println((a-'a');		//0
+
+char h='h';
+System.out.println(h-'a');		//7
+
+char z='z';
+System.out.println(z-'a');		//25
