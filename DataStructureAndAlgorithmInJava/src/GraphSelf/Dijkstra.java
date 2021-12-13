@@ -52,9 +52,9 @@ public class Dijkstra {
 	static class Edge {
 		int src;
 		int nbr;
-		int wt;
+		Long wt;
 
-		Edge(int src, int nbr, int wt) {
+		Edge(int src, int nbr, Long wt) {
 			this.src = src;
 			this.nbr = nbr;
 			this.wt = wt;
@@ -64,9 +64,9 @@ public class Dijkstra {
 	static class Pair implements Comparable<Pair> {
 		int v;
 		String psf;
-		int wsf;
+		Long wsf;
 
-		Pair(int v, String psf, int wsf) {
+		Pair(int v, String psf, Long wsf) {
 			this.v = v;
 			this.psf = psf;
 			this.wsf = wsf;
@@ -74,13 +74,13 @@ public class Dijkstra {
 
 		@Override
 		public int compareTo(Pair o) {
-			return this.wsf - o.wsf;
+			return (int) (this.wsf - o.wsf);
 		}
 	}
 
 	static void dijkstra(ArrayList<Edge>[] adj, int src, boolean[] visited) {
 		PriorityQueue<Pair> pq = new PriorityQueue<>();
-		pq.add(new Pair(src, src + "", 0));
+		pq.add(new Pair(src, src + "", 0L));
 		while (pq.size() > 0) {
 			// rm*wa*
 			Pair rem = pq.remove();
@@ -115,7 +115,7 @@ public class Dijkstra {
 			String[] parts = br.readLine().split(" ");
 			int v1 = Integer.parseInt(parts[0]);
 			int v2 = Integer.parseInt(parts[1]);
-			int wt = Integer.parseInt(parts[2]);
+			Long wt = Long.parseLong(parts[2]);
 			adj[v1].add(new Edge(v1, v2, wt));
 			adj[v2].add(new Edge(v2, v1, wt));
 		}
