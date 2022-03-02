@@ -4,6 +4,38 @@ import java.util.*;
 
 //Total possible subsets for string of size n is n*(n+1)/2
 
+/*
+s
+st
+stu
+stud
+stude
+studen
+student
+t
+tu
+tud
+tude
+tuden
+tudent
+u
+ud
+ude
+uden
+udent
+d
+de
+den
+dent
+e
+en
+ent
+n
+nt
+t
+
+
+*/
 public class SubsetOfString {
 
 	public static void main(String[] args) {

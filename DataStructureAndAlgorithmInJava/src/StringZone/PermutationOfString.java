@@ -2,6 +2,14 @@ package StringZone;
 
 import java.util.*;
 
+/*
+
+[abcd, abdc, acbd, acdb, adbc, adcb, bacd, badc, bcad, bcda, bdac, bdca, cabd, cadb, cbad, cbda, cdab, cdba, dabc, dacb, dbac, dbca, dcab, dcba]
+24
+
+
+*/
+
 public class PermutationOfString {
 
 	static void printPermutn(ArrayList<String> arr, String str, String ans) {
@@ -20,7 +28,7 @@ public class PermutationOfString {
 	}
 
 	public static void main(String[] args) {
-		String str = "XXXXXXXXXXXYYYYYYYYYYZZZZZZZZZZZZ";
+		String str = "abcd";
 
 		int n = str.length();
 
