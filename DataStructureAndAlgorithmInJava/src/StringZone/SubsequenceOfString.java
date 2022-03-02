@@ -28,10 +28,14 @@ public class SubsequenceOfString {
 					sub = sub + str.charAt(j);
 				}
 			}
-			if (!mp.containsKey(sub.length())) {
+			if (mp.containsKey(sub.length())) {
+				mp.get(sub.length()).add(sub);
+
+			} else {
 				mp.put(sub.length(), new HashSet<>());
+				mp.get(sub.length()).add(sub);
 			}
-			mp.get(sub.length()).add(sub);
+
 		}
 		System.out.println(mp);
 
