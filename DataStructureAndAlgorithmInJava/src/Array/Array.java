@@ -119,8 +119,7 @@ public class Array {
 //			System.out.println("Array is not palindrome.");
 //		}
 		
-		//Second Maximum value of array
-		//System.out.println("Second Maximum value is :- "+obj.secondLargest());
+	
 			
 		//Two sum problems
 		int res[] = obj.twoSum(21);
