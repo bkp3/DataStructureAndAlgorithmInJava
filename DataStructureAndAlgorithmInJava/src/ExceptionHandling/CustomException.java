@@ -2,9 +2,8 @@ package ExceptionHandling;
 
 /*
 
-thats the default outputExceptionHandling.MyException: I dont want this
+thats the default output : ExceptionHandling.MyException: I dont want this
 20
-
 
 */
 class MyException extends Exception {
@@ -24,7 +23,7 @@ public class CustomException {
 			}
 
 		} catch (MyException e) {
-			System.out.println("thats the default output" + e);
+			System.out.println("thats the default output : " + e);
 		} catch (Exception e) {
 			System.out.println("something went wrong" + e);
 		}
