@@ -1,6 +1,10 @@
 package SDE_ArraysI;
 
 /*
+
+Given a matrix if an element in the matrix is 0 then you will have to set its entire column and row to 0 and then return the matrix.
+
+
 0 1 2 0 
 3 4 5 2 
 1 3 1 5 
@@ -10,10 +14,12 @@ ans:-
 0 3 1 0 
 
 
+
+
 */
 public class SetMatrixZeroes {
 
-	// brute force approach
+	// brute force approach Time O(n^3)
 	public static void setZeroesI(int[][] mat, int m, int n) {
 
 		for (int i = 0; i < m; i++) {
