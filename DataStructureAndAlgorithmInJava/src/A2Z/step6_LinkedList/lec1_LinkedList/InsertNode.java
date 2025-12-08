@@ -1,4 +1,4 @@
-package A2Z.steps6_LinkedList.lec1_LinkedList;
+package A2Z.step6_LinkedList.lec1_LinkedList;
 
 public class InsertNode {
     static void main() {
