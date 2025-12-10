@@ -1,4 +1,4 @@
-package A2Z.step6_LinkedList.lec1_DoublyLinkedList;
+package A2Z.step6_LinkedList.lec2_DoublyLinkedList;
 
 public class InsertionOfNode {
 
